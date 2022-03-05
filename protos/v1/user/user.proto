@@ -59,7 +59,9 @@ message ListUsersResponse {
   // Users
   repeated User data = 1;
 
-  int32 next_page = 2;
+  int64 total = 2;
+
+  int64 next_page = 3;
 }
 
 message User {
