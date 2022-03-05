@@ -52,7 +52,7 @@ service UserService {
 }
 
 message FindAllUsersRequest {
-  int32 page = 1;
+  string page = 1;
 }
 
 message ListUsersResponse {
