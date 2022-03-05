@@ -23,7 +23,7 @@ service UserService {
   // Find User by ID
   rpc FindUserByID (commonpb.UUIDRequest) returns (User) {
     option (google.api.http) = {
-      get: "/api/v1/users/{id=*}"
+      get: "/api/v1/users/{id}"
     };
   }
 
@@ -38,7 +38,7 @@ service UserService {
   // Update User by ID
   rpc UpdateUser (UpdateUserRequest) returns (google.rpc.Status) {
     option (google.api.http) = {
-      put: "/api/v1/users/{id=*}"
+      put: "/api/v1/users/{id}"
       body: "*"
     };
   }
@@ -46,13 +46,13 @@ service UserService {
   // Delete User
   rpc DeleteUser (commonpb.UUIDRequest) returns (google.rpc.Status) {
     option (google.api.http) = {
-      delete: "/api/v1/users/{id=*}"
+      delete: "/api/v1/users/{id}"
     };
   }
 }
 
 message FindAllUsersRequest {
-  string page = 1;
+  int64 page = 1;
 }
 
 message ListUsersResponse {
