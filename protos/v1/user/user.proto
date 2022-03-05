@@ -56,12 +56,10 @@ message FindAllUsersRequest {
 }
 
 message ListUsersResponse {
+  int64 total = 1;
+  int64 next_page = 2;
   // Users
-  repeated User data = 1;
-
-  int64 total = 2;
-
-  int64 next_page = 3;
+  repeated User data = 3;
 }
 
 message User {
