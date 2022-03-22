@@ -7,6 +7,9 @@ package commonpb;
 option go_package = "github.com/xdorro/base-project-proto/protos/v1/common;commonpb";
 
 message UUIDRequest {
-  // The resource name of the book to be deleted, for example:
   string id = 1;
+}
+
+message SlugRequest {
+  string slug = 1;
 }

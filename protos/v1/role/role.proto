@@ -52,14 +52,14 @@ service RoleService {
 }
 
 message FindAllRolesRequest {
-  int32 page = 1;
+  int64 page = 1;
 }
 
 message ListRolesResponse {
+  int64 total_page = 1;
+  int64 current_page = 2;
   // Roles
-  repeated Role data = 1;
-
-  int32 next_page = 2;
+  repeated Role data = 3;
 }
 
 message Role {
