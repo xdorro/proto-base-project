@@ -6,10 +6,19 @@ package commonpb;
 // and the package name.
 option go_package = "github.com/xdorro/base-project-proto/protos/v1/common;commonpb";
 
+import "google/protobuf/any.proto";
+
 message UUIDRequest {
   string id = 1;
 }
 
 message SlugRequest {
   string slug = 1;
+}
+
+message CommonResponse {
+  bool error = 1;
+  string message = 2;
+  google.protobuf.Any detail = 3;
+  repeated google.protobuf.Any details = 4;
 }
