@@ -4,7 +4,7 @@ package userpb;
 
 // Defines the import path that should be used to import the generated package,
 // and the package name.
-option go_package = "github.com/xdorro/base-project-proto/protos/v1/user;userpb";
+option go_package = "github.com/xdorro/proto-base-project/protos/v1/user;userpb";
 
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";

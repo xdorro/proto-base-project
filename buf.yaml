@@ -1,5 +1,5 @@
 version: v1
-name: buf.build/xdorro/base-project-proto
+name: buf.build/xdorro/proto-base-project
 deps:
   - buf.build/googleapis/googleapis
   - buf.build/grpc-ecosystem/grpc-gateway

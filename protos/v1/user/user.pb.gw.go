@@ -15,7 +15,7 @@ import (
 
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/utilities"
-	"github.com/xdorro/base-project-proto/protos/v1/common"
+	"github.com/xdorro/proto-base-project/protos/v1/common"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/grpclog"

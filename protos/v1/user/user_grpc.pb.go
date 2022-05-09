@@ -8,7 +8,7 @@ package userpb
 
 import (
 	context "context"
-	common "github.com/xdorro/base-project-proto/protos/v1/common"
+	common "github.com/xdorro/proto-base-project/protos/v1/common"
 	status "google.golang.org/genproto/googleapis/rpc/status"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
