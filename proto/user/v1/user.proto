@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package user.v1;
+
+import "google/rpc/status.proto";
+
+service UserService {
+  // Find all Users
+  rpc FindAllUsers (FindAllUsersRequest) returns (ListUsersResponse) {}
+
+  // Find User by ID
+  rpc FindUserByID (UUIDRequest) returns (User) {}
+
+  // Create new User
+  rpc CreateUser (CreateUserRequest) returns (google.rpc.Status) {}
+
+  // Update User by ID
+  rpc UpdateUser (UpdateUserRequest) returns (google.rpc.Status) {}
+
+  // Delete User
+  rpc DeleteUser (UUIDRequest) returns (google.rpc.Status) {}
+}
+
+message UUIDRequest {
+  string id = 1;
+}
+
+message FindAllUsersRequest {
+  int64 page = 1;
+}
+
+message ListUsersResponse {
+  int64 total_page = 1;
+  int64 current_page = 2;
+  // Users
+  repeated User data = 3;
+}
+
+message User {
+  // Output only. Id of the user.
+  string id = 1;
+
+  // Output only. Name of the user.
+  string name = 2;
+
+  // Output only. Email of the user.
+  string email = 3;
+
+  // Output only. Status of the user.
+  int32 status = 4;
+}
+
+// The request create new User
+message CreateUserRequest {
+  string name = 1;
+  string email = 2;
+  string password = 3;
+  int32 status = 4;
+  string role = 5;
+}
+
+// The request update User
+message UpdateUserRequest {
+  string id = 1;
+  optional string name = 2;
+  optional string email = 3;
+  optional int32 status = 4;
+  optional string role = 5;
+}
