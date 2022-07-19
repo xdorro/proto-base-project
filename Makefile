@@ -3,7 +3,7 @@ buf.gen:
 	buf generate
 
 buf.update:
-	buf mod update
+	cd proto/ && buf mod update
 
 go.get:
 	go get -u ./...
