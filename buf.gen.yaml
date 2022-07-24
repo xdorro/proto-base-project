@@ -1,24 +1,14 @@
 version: v1
+
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/xdorro/base-project-proto/proto-gen-go
+
 plugins:
   - name: go
-    out: .
-    opt:
-      - paths=source_relative
-  - name: go-grpc
-    out: .
-    opt:
-      - paths=source_relative
-      - require_unimplemented_servers=false
-  - name: grpc-gateway
-    out: .
-    opt:
-      - paths=source_relative
-      - logtostderr=true
-#  - name: openapiv2
-#    strategy: all
-#    out: api/swagger
-#    opt:
-#      - use_go_templates=true
-#      - json_names_for_fields=true
-#      - allow_merge=true
-#      - logtostderr=true
+    out: proto-gen-go
+    opt: paths=source_relative
+  - name: connect-go
+    out: proto-gen-go
+    opt: paths=source_relative

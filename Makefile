@@ -1,20 +1,9 @@
 
-grpc.install:
-	go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@latest
-	go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@latest
-	go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
-	go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
-
 buf.gen:
 	buf generate
 
 buf.update:
-	buf mod update
-
-buf.install:
-	go install github.com/bufbuild/buf/cmd/buf@latest
-	go install github.com/bufbuild/buf/cmd/protoc-gen-buf-breaking@latest
-	go install github.com/bufbuild/buf/cmd/protoc-gen-buf-lint@latest
+	cd proto/ && buf mod update
 
 go.get:
 	go get -u ./...
@@ -27,4 +16,13 @@ go.tidy:
 go.test:
 	go test ./...
 
-go.install: grpc.install buf.install
+go.install:
+	go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
+	go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+
+	go install github.com/bufbuild/buf/cmd/buf@latest
+	go install github.com/bufbuild/connect-go/cmd/protoc-gen-connect-go@latest
+
+	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+	go install golang.org/x/tools/cmd/goimports@latest
+
